@@ -1,0 +1,497 @@
+/* ----- Styles Globaux ----- */
+body {
+    font-family: 'Fredoka One', sans-serif;
+    background-color: #91badb;  /* Fond clair */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ----- En-tête et Hero Section ----- */
+/* Style du header */
+header {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #04305f, #004080); /* Dégradé bleu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 30px 0; /* Ajuste l'espacement vertical */
+    overflow: hidden; /* Cache les éléments qui dépassent */
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: 'Fredoka One', sans-serif; /* Applique la police Fredoka One */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-color: #1b73b3; /* Bleu clair */
+    padding: 50px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%; /* Empêche la boîte de déborder */
+    box-sizing: border-box; /* Inclut les marges et le padding dans la largeur */
+    overflow: hidden; /* Évite les débordements */
+    border-radius: 10px;
+}
+
+/* Superposition de contenu */
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4); /* Superposition sombre */
+    padding: 25px 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto; /* Centrer la boîte */
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Titre principal */
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Paragraphe */
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    word-wrap: break-word; /* Permet aux mots longs de passer à la ligne */
+}
+
+/* Mise en avant des spécialités */
+.hero strong {
+    font-size: 1.3em;
+    color: #FFD700; /* Jaune doré */
+}
+
+/* Effets décoratifs - Bulles animées */
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s infinite ease-in-out;
+}
+
+header::before {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    top: 10%;
+    left: 20%;
+}
+
+header::after {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    bottom: 15%;
+    right: 15%;
+}
+
+/* Animation des bulles */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px; /* Ajuste le padding sur les petits écrans */
+    }
+
+    .hero {
+        padding-top: 5px; /* Réduit l'espacement pour la section hero */
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* ----- Section des Services ----- */
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.service-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: #0D47A1;  /* Bleu foncé pour les titres */
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #555;  /* Gris pour le texte */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* ----- Section À propos ----- */
+.about {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2em;
+    color: #0D47A1;  /* Bleu foncé pour le titre */
+}
+
+.about p {
+    font-size: 1.2em;
+    color: #555;  /* Gris pour le texte */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ----- Section d'appel à l'action ----- */
+.cta {
+    background-color: #BBDEFB;  /* Bleu clair pour la section CTA */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.cta h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0D47A1;  /* Bleu foncé pour le titre */
+}
+
+.cta p {
+    font-size: 1.2em;
+    color: #555;  /* Gris pour le texte */
+}
+
+.cta a {
+    color: #0D47A1;  /* Bleu foncé pour les liens */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta a:hover {
+    text-decoration: underline;
+}
+
+/* ----- Footer ----- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;  /* Fond sombre pour le footer */
+    color: white;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* ----- Animations et transitions ----- */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ----- MEDIA QUERIES POUR RÉPONDRE AUX TAILLES D'ÉCRAN ----- */
+
+/* ----- Mobile (jusqu'à 600px) ----- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;  /* Taille réduite du titre sur mobile */
+    }
+
+    header p {
+        font-size: 1em;  /* Taille réduite du texte sur mobile */
+    }
+
+    .cta-button {
+        padding: 12px 20px;  /* Bouton plus petit sur mobile */
+        font-size: 1em;
+    }
+
+    .services {
+        grid-template-columns: 1fr;  /* Affichage en une seule colonne sur mobile */
+    }
+
+    .service-card {
+        padding: 15px;  /* Réduire les espaces internes des cartes de service */
+    }
+
+    .about h2 {
+        font-size: 1.8em;  /* Réduire la taille du titre de la section à propos */
+    }
+
+    .about p {
+        font-size: 1em;  /* Réduire la taille du texte de la section à propos */
+    }
+
+    .cta h2 {
+        font-size: 1.8em;  /* Taille réduite du titre dans la section d'appel à l'action */
+    }
+
+    .cta p {
+        font-size: 1em;  /* Taille réduite du texte dans la section d'appel à l'action */
+    }
+}
+
+/* ----- Tablettes (601px à 900px) ----- */
+@media (min-width: 601px) and (max-width: 900px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .cta-button {
+        padding: 13px 25px;  /* Bouton légèrement plus grand sur tablette */
+        font-size: 1.1em;
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr;  /* 2 colonnes sur tablette */
+    }
+
+    .about h2 {
+        font-size: 1.9em;
+    }
+
+    .about p {
+        font-size: 1.1em;
+    }
+
+    .cta h2 {
+        font-size: 1.9em;
+    }
+
+    .cta p {
+        font-size: 1.1em;
+    }
+}
+
+/* ----- Ordinateurs (plus de 900px) ----- */
+@media (min-width: 901px) {
+    .cta-button {
+        padding: 15px 30px;  /* Bouton normal pour les grands écrans */
+        font-size: 1.2em;
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr 1fr;  /* 3 colonnes pour les grands écrans */
+    }
+
+    .about h2 {
+        font-size: 2em;
+    }
+
+    .about p {
+        font-size: 1.2em;
+    }
+
+    .cta h2 {
+        font-size: 2em;
+    }
+
+    .cta p {
+        font-size: 1.2em;
+    }
+}
+
+/* ----- Section des Bulles (SLAM et SISR) ----- */
+.bubbles-container {
+    display: flex;  /* Affichage des éléments en ligne */
+    justify-content: center;  /* Centrer horizontalement */
+    align-items: center;  /* Centrer verticalement */
+    margin: 50px 0;  /* Espacement au-dessus et en-dessous des bulles */
+    gap: 50px;  /* Espace entre les bulles */
+}
+
+.bubble {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 50%;  /* Forme ronde */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.bubble img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;  /* Les images remplissent la bulle */
+}
+
+.bubble:hover {
+    transform: translateY(-10px);  /* Effet de flottement au survol */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);  /* Ombre plus intense au survol */
+}
+
+.bubble:active {
+    transform: translateY(2px);  /* Légère pression au clic pour effet interactif */
+}
+
+/* Effet de flottement sur les bulles */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Application de l'animation pour faire "flotter" légèrement les bulles */
+.bubble {
+    animation: float 3s ease-in-out infinite;  /* Animation de flottement */
+}
+
+/* ----- Media Queries pour les petits écrans ----- */
+@media (max-width: 600px) {
+    .bubbles-container {
+        flex-direction: row;  /* Disposition des bulles en ligne */
+        gap: 30px;  /* Réduire l'écart entre les bulles sur les petits écrans */
+    }
+
+    .bubble {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+
+.alternance {
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.alternance h2 {
+    color: #007BFF; /* Bleu */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.alternance .intro {
+    margin-top: 60px;
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.alternance .points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
+.alternance .point {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.alternance .point h3 {
+    font-size: 1.2em;
+    color: #007BFF; /* Bleu */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alternance .point p {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
+
+.alternance .conclusion {
+    font-size: 1.1em;
+    color: #333;
+    margin: 30px 0;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .alternance .points {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    }
+}
+
+/* ----- Logo ---- */
+header .logo {
+    width: 100px;  /* Taille du logo (ajuster selon besoin) */
+    height: 100px; /* Taille du logo */
+    border-radius: 50%; /* Forme ronde */
+    overflow: hidden;  /* Masque tout ce qui dépasse */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centrage horizontal */
+    background-color: white;
+}
+
+header .logo img {
+    width: 100%;   /* L'image prendra toute la largeur du conteneur */
+    height: 100%;  /* L'image prendra toute la hauteur du conteneur */
+    object-fit: cover;  /* Assure que l'image couvre bien le conteneur sans déformation */
+}

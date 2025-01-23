@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nous rejoindre - BTS SIO</title>
+  <link rel="icon" type="image/png" href="../images/logo-320x320.png" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="../images/logo-320x320.png" alt="Logo BTS SIO" class="logo">
+        </a>
+    </div>
+  <div class="container">
+    <h1>Tu es intéressé par le BTS SIO ?</h1>
+    <p>Remplis ce formulaire pour nous faire part de ton intérêt. Nous reviendrons vers toi pour plus d'informations !</p>
+
+    <form id="contactForm">
+        <div>
+            <label for="prenom">* Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+        </div>
+        
+        <div>
+            <label for="nom">* Nom :</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+        </div>
+        
+        <div>
+            <label for="email">* Email :</label>
+            <input type="email" id="email" name="email" required placeholder="Votre email">
+        </div>
+        
+        <div>
+            <label for="tel">  Téléphone :</label>
+            <input type="tel" id="tel" name="tel" placeholder="Votre téléphone (optionnel)">
+        </div>
+        
+        <div class="message">
+            <label for="message">  Message :</label>
+            <textarea id="message" name="message" rows="4" placeholder="Votre message (optionnel)"></textarea>
+        </div>
+        
+        <div>
+            <button type="submit">Envoyer</button>
+        </div>
+    </form>      
+
+    <p id="responseMessage"></p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

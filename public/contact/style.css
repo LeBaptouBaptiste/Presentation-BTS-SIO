@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #FF7043; /* Changement de la couleur pour l'harmonie avec l'orange */
+}
+
+form.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* transition de visibilité avec un délai */
+}
+
+form.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, visibility 0s; /* transition de visibilité sans délai */
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes égales pour les grands écrans */
+    grid-gap: 15px; /* espace entre les champs */
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 1em;
+    color: #333;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #FF7043; /* Bordure orange */
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: border-color 0.3s ease; /* Transition pour les bordures */
+}
+
+/* Ajout de la classe pour les champs invalides */
+form input.invalid,
+form textarea.invalid {
+    border: 2px solid #FF6347; /* Orange vif pour indiquer l'erreur */
+    background-color: #FFEBEE; /* Fond rouge pâle */
+}
+
+form .message {
+    grid-column: span 2; /* Le message prend toute la largeur de la grille */
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #FF7043; /* Bouton orange */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-column: span 2; /* Le bouton occupe toute la largeur de la grille */
+    margin-top: 15px;
+    align-self: center; /* Centre le bouton horizontalement dans la grille */
+    animation: grow 2s infinite ease-in-out; /* Animation de grossissement infinie */
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1); /* Taille normale */
+    }
+    50% {
+        transform: scale(1.05); /* Légère augmentation de taille */
+    }
+    100% {
+        transform: scale(1); /* Retour à la taille normale */
+    }
+}
+
+form button:hover {
+    background-color: #FF5722; /* L'orange devient plus foncé au survol, si nécessaire */
+}
+
+form button:focus {
+    outline: none; /* Enlever le contour par défaut sur le focus (facultatif) */
+}
+
+form button:hover {
+    background-color: #FF5722; /* L'orange devient plus foncé au survol */
+}
+
+#responseMessage {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #FFEBEE; /* Fond rouge pâle similaire aux erreurs */
+    border: 1px solid #FF6347;
+    border-radius: 4px;
+    padding: 10px;
+    color: #FF6347; /* Couleur du texte pour correspondre à l'erreur */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ----- Media Queries pour les petits écrans (smartphones) ----- */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    form {
+        grid-template-columns: 1fr; /* Passer à une seule colonne sur les petits écrans */
+    }
+
+    form .message {
+        grid-column: span 1; /* Le message prend une seule colonne */
+    }
+
+    form button {
+        grid-column: span 1; /* Le bouton occupe toute la largeur de la grille sur les petits écrans */
+    }
+
+    form input,
+    form textarea {
+        font-size: 0.9em; /* Réduire légèrement la taille des champs sur mobile */
+    }
+
+    #responseMessage {
+        font-size: 0.9em;
+    }
+}
+
+/* ----- Option pour les tablettes ----- */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    form {
+        grid-template-columns: 1fr 1fr; /* Revenir à deux colonnes sur tablette */
+    }
+
+    form input,
+    form textarea {
+        font-size: 1em; /* Garder la taille normale sur tablette */
+    }
+}
+
+.logo-container {
+    text-align: center; /* Centre le logo horizontalement */
+    margin: 30px 0; /* Ajoute un espace en dessous du logo */
+}
+
+.logo {
+    width: 100px; /* Ajuste la taille du logo selon tes besoins */
+    height: auto; /* Conserve les proportions du logo */
+}
