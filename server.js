@@ -1,9 +1,12 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 // Middleware pour analyser le corps de la requête (JSON)
 app.use(bodyParser.json());
@@ -47,6 +50,6 @@ app.post('/submit', (req, res) => {
   });  
 
 // Démarrer le serveur
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Serveur en écoute sur http://localhost:${port}`);
 });

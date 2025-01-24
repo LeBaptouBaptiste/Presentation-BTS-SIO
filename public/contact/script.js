@@ -30,7 +30,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             message: formData.get('message')
         };
 
-        fetch('http://localhost:3000/submit', {
+        fetch('http://192.168.11.100:3000/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
