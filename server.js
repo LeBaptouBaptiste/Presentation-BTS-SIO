@@ -1,6 +1,5 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
@@ -9,7 +8,7 @@ const port = 3000;
 app.use(cors());
 
 // Middleware pour analyser le corps de la requête (JSON)
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(express.static('public'));  // Sert les fichiers statiques (HTML, CSS, JS)
 
 // Créer ou ouvrir la base de données SQLite
